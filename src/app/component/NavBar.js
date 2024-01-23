@@ -45,7 +45,7 @@ export default function NavBar(){
                     </button>
                 </div>
                 <div className="flex-1">
-                    <Link className="btn btn-ghost text-xl tracking-widest"
+                    <Link className="btn btn-ghost text-xl tracking-widest text-[#00ebeb]"
                           href={"/"}>
                             Keiru_Jun.portfolio
                     </Link>
