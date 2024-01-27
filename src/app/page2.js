@@ -34,7 +34,7 @@ const Home = () => {
             </div>
         </div>
 
-        <NavBar setActiveContent={setActiveContent} />
+        <NavBar   />
         
         <Footer />
       </div>

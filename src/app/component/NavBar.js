@@ -1,36 +1,31 @@
 "use client"
 import React, { useState } from "react";
 
-const NavBar = () => {
-  const Menus = [
-    { name: "Home", icon: "home-outline", dis: "translate-x-0" },
-    { name: "Abouts", icon: "people-outline", dis: "translate-x-16" },
-    { name: "Projects", icon: "code-working-outline", dis: "translate-x-32" },
-    { name: "Contacts", icon: "call-outline", dis: "translate-x-48" },
-  ];
+const NavBar = ({ menus, onMenuClick }) => {
   const [active, setActive] = useState(0);
 
   const handleMenuClick = (index) => {
     setActive(index);
+    onMenuClick(index);
   };
 
   return (
     <div className="fixed bottom-0 left-0 right-0 bg-black bg-opacity-50 px-6 py-2 mb-5 z-50 max-w-md mx-auto border border-transparent rounded-full">
       <ul className="flex justify-center items-center relative">
-        {Menus.map((menu, i) => (
-          <li key={i} className="mx-2 mt-5">
+        {menus.map((menu, index) => (
+          <li key={index} className="mx-2 mt-5">
             <a
               className={`flex flex-col text-center cursor-pointer transition-opacity ${
-                i === active ? "text-white text-cyan-400" : "text-gray-300"
+                index === active ? "text-white text-cyan-400" : "text-gray-300"
               }`}
-              onClick={() => handleMenuClick(i)}
+              onClick={() => handleMenuClick(index)}
             >
-              <span className={`text-xl${i === active ? " text-cyan-400" : ""}`}>
+              <span className={`text-xl${index === active ? " text-cyan-400" : ""}`}>
                 <ion-icon name={menu.icon}></ion-icon>
               </span>
               <span
                 className={`${
-                  active === i ? "opacity-100 duration-700" : "opacity-0"
+                  index === active ? "opacity-100 duration-700" : "opacity-0"
                 } text-xs`}
               >
                 {menu.name}
