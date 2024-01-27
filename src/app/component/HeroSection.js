@@ -33,7 +33,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="lg:py-16 min-h-screen">
+    <section className="lg:py-16 min-h-screen p-20">
       <div className="grid grid-cols sm:grid-cols-12">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
@@ -67,7 +67,7 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
           className="col-span-4 place-self-center lg:mt-0"
         >
-          <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative">
+          <div className="rounded-full bg-[#303333] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative bg-opacity-50">
             {currentName === 'Jameson' && (
               <Image
                 src="/images/jameson.png"

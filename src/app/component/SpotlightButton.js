@@ -1,13 +1,5 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
-import Link from "next/link"
-
-const ButtonWrapper = () => {
-  return (
-    <SpotlightButton />
-
-  );
-};
 
 const SpotlightButton = () => {
   const btnRef = useRef(null);
@@ -29,12 +21,18 @@ const SpotlightButton = () => {
       );
     };
 
-    btnRef.current.addEventListener("mousemove", handleMouseMove);
-    btnRef.current.addEventListener("mouseleave", handleMouseLeave);
+    const btnElement = btnRef.current;
+
+    if (btnElement) {
+      btnElement.addEventListener("mousemove", handleMouseMove);
+      btnElement.addEventListener("mouseleave", handleMouseLeave);
+    }
 
     return () => {
-      btnRef.current.removeEventListener("mousemove", handleMouseMove);
-      btnRef.current.removeEventListener("mouseleave", handleMouseLeave);
+      if (btnElement) {
+        btnElement.removeEventListener("mousemove", handleMouseMove);
+        btnElement.removeEventListener("mouseleave", handleMouseLeave);
+      }
     };
   }, []);
 
@@ -45,7 +43,7 @@ const SpotlightButton = () => {
       className="relative w-full mt-5 max-w-xs overflow-hidden rounded-lg bg-slate-950 px-4 py-3 text-lg font-medium text-white"
     >
       <span className="pointer-events-none relative z-10 mix-blend-difference">
-          Get Started
+        Get Started
       </span>
       <span
         ref={spanRef}
@@ -55,4 +53,4 @@ const SpotlightButton = () => {
   );
 };
 
-export default ButtonWrapper;
+export default SpotlightButton;

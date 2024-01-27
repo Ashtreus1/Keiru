@@ -1,17 +1,13 @@
 const Footer = () => {
-    return(
-        <footer className="footer 
-                           border 
-                           z-10 
-                           border-t-[#33353F] 
-                           border-l-transparent 
-                           border-r-transparent text-white">
-            <div className="container p-12 flex justify-between">
-                <span>Keiru_Jun.portfolio</span>
-                <p className="text-slate-600">All rights reserved.</p>
-            </div>
-        </footer>
-    )
-}
-
-export default Footer
+    return (
+      <footer className="footer z-10 bg-black opacity-2 text-white">
+        <div className="container p-12 flex justify-between">
+          <span>Keiru_Jun.portfolio</span>
+          <p className="text-white">All rights reserved.</p>
+        </div>
+      </footer>
+    );
+  };
+  
+  export default Footer;
+  
