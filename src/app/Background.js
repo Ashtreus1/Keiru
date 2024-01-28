@@ -4,7 +4,7 @@ import './globals.css'
 const Background = ({ children }) => {
   return (
     <>
-      <div className="background">
+      <div className="h-screen w-screen bg-cover relative">
 
             <div className="component-container">
                 {children}
