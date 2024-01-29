@@ -4,6 +4,7 @@ import HeroSection from './component/HeroSection'
 import Footer from './component/Footer'
 import ProjectsSection from './component/ProjectSection'
 import NavBar from './component/NavBar'
+import ContactSection from './component/ContactSection'
 import AboutSection from "./component/AboutSection";
 import AvatarSwitch from './component/AvatarSwitch'
 import React, { useState } from "react";
@@ -16,7 +17,7 @@ const Home = () => {
     { name: "Home", icon: "home-outline", dis: "translate-x-0", component: <HeroSection /> },
     { name: "Abouts", icon: "people-outline", dis: "translate-x-16", component: <AboutSection avatar={selectedAvatar} /> },
     { name: "Projects", icon: "code-working-outline", dis: "translate-x-32", component: <ProjectsSection /> },
-    { name: "Contacts", icon: "call-outline", dis: "translate-x-48" },
+    { name: "Contacts", icon: "call-outline", dis: "translate-x-48", component: <ContactSection/>},
   ];
 
   const renderComponent = () => {
@@ -38,7 +39,7 @@ const Home = () => {
 
   return (
     <Background>
-      <div className="h-screen overflow-y-auto">
+      <div className="h-screen w-screen overflow-y-auto">
         <AvatarSwitch onSelectAvatar={handleAvatarSelection} />
         <NavBar menus={menus} onMenuClick={handleMenuClick} />
         {renderComponent()}

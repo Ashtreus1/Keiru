@@ -52,7 +52,7 @@ const HeroSection = () => {
             />
           </h1>
 
-          <p className="text-{#ADB7BE} text-4xl lg:text-xl max-w-lg">
+          <p className="text-black text-4xl lg:text-xl max-w-lg">
             We are passionate aspiring IT professionals in various fields, like
             full-stack development, graphic design, and many more. Explore our website to
             know us more. Let's collaborate on our works!

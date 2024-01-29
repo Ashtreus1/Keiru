@@ -10,13 +10,13 @@ const NavBar = ({ menus, onMenuClick }) => {
   };
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-black bg-opacity-50 px-6 py-2 mb-5 z-50 max-w-md mx-auto border border-transparent rounded-full">
+    <div className="fixed bottom-0 left-0 right-0 bg-white bg-opacity-70 px-6 py-2 mb-5 z-50 max-w-md mx-auto border border-transparent rounded-full">
       <ul className="flex justify-center items-center relative">
         {menus.map((menu, index) => (
           <li key={index} className="mx-2 mt-5">
             <a
               className={`flex flex-col text-center cursor-pointer transition-opacity ${
-                index === active ? "text-white text-cyan-400" : "text-gray-300"
+                index === active ? "text-black" : "text-black"
               }`}
               onClick={() => handleMenuClick(index)}
             >
