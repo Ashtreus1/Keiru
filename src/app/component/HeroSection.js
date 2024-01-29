@@ -1,9 +1,7 @@
-"use client"
 import React, { useState, useEffect } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { motion, useAnimation } from 'framer-motion';
-import Link from 'next/link';
-import ButtonWrapper  from './SpotlightButton';
+import ButtonWrapper from './SpotlightButton';
 import Image from 'next/image';
 
 const HeroSection = () => {
@@ -39,26 +37,28 @@ const HeroSection = () => {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
+          whileHover={{ scale: 1.05, border: "1px solid cyan" }}
+          className="col-span-8 place-self-center text-center mt-10 sm:text-left justify-self-start bg-black bg-opacity-70 p-10 rounded-md cursor-pointer"
         >
           <h1 className="text-white mb-4 text-6xl lg:text-6xl font-extrabold">
             <span className="text-white bg-clip-text">Hello, I&apos;m{' '}</span>
             <TypeAnimation
               sequence={[currentName, 3000, 'Junell', 4000]}
               wrapper="span"
+              style={{ color: "cyan" }}
               speed={50}
               repeat={Infinity}
               onComplete={handleNameChange}
             />
           </h1>
 
-          <p className="text-black text-4xl lg:text-xl max-w-lg">
+          <p className="text-cyan text-4xl lg:text-2xl max-w-lg">
             We are passionate aspiring IT professionals in various fields, like
             full-stack development, graphic design, and many more. Explore our website to
             know us more. Let's collaborate on our works!
           </p>
           <div className="col-span-5"></div>
-          <Link href={'#about'}>{<ButtonWrapper/>}</Link>
+          <ButtonWrapper />
         </motion.div>
 
         <motion.div
@@ -71,7 +71,7 @@ const HeroSection = () => {
             {currentName === 'Jameson' && (
               <Image
                 src="/images/jameson.png"
-                alt="hero image"
+                alt="Jameson's photo"
                 className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 rounded-full h-80"
                 width={300}
                 height={300}
@@ -80,7 +80,7 @@ const HeroSection = () => {
             {currentName === 'Junell' && (
               <Image
                 src="/images/junell.jpg"
-                alt="hero image"
+                alt="Junell's photo"
                 className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 rounded-full h-80"
                 width={300}
                 height={300}
