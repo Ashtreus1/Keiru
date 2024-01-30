@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
+import AboutSection from "./AboutSection";
 
-const SpotlightButton = ({ click }) => {
+const SpotlightButton = ({ buttonClick }) => {
+
   const btnRef = useRef(null);
   const spanRef = useRef(null);
+  const get_started = <AboutSection/>
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -36,14 +39,13 @@ const SpotlightButton = ({ click }) => {
     };
   }, []);
 
-  const handleClick = () => {
-    // Call the parent component's click function
-    click();
-  };
+  const clickButton = () => {
+    buttonClick()
+  }
 
   return (
     <motion.button
-      onClick={handleClick}
+      onClick={() => { clickButton(clickButton)}}
       whileTap={{ scale: 0.985 }}
       ref={btnRef}
       className="relative w-full mt-5 max-w-xs overflow-hidden rounded-lg bg-slate-950 px-4 py-3 text-lg font-medium text-white"

@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const AvatarSwitch = ({ onSelectAvatar }) => {
-  const avatars = ["jameson.png", "junell.jpg"];
+  const avatars = ["jameson.png", "junell.jpeg"];
 
   const handleAvatarClick = (avatar) => {
     onSelectAvatar(avatar);

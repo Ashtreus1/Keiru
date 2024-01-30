@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { motion, useAnimation } from 'framer-motion';
-import ButtonWrapper from './SpotlightButton';
+import SpotlightButton from './SpotlightButton';
+import AboutSection from './AboutSection';
 import Image from 'next/image';
 
+
 const HeroSection = () => {
+  const get_started = <AboutSection/>
   const [currentName, setCurrentName] = useState('Jameson');
+  const [aboutClick, setAboutClick] = useState(get_started)
+  const [buttonClick, setButtonClick] = useState(0)
   const controls = useAnimation();
+
+  
 
   useEffect(() => {
     controls.start({ opacity: 1, scale: 1 });
@@ -31,6 +38,11 @@ const HeroSection = () => {
       });
     })
   };
+
+  const handleClick = (click) => {
+    setAboutClick(click)
+    setButtonClick(1)
+  }
 
   return (
     <section className="lg:py-16 min-h-screen p-20">
@@ -60,7 +72,7 @@ const HeroSection = () => {
             know us more. Let's collaborate on our works!
           </p>
           <div className="col-span-5"></div>
-          <ButtonWrapper />
+          <SpotlightButton buttonClick={() => {handleClick(aboutClick)}}/>
         </motion.div>
 
         <motion.div
@@ -81,7 +93,7 @@ const HeroSection = () => {
             )}
             {currentName === 'Junell' && (
               <Image
-                src="/images/junell.jpg"
+                src="/images/junell.jpeg"
                 alt="Junell's photo"
                 className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 rounded-full h-80"
                 width={300}
