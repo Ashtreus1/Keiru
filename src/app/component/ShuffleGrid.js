@@ -100,7 +100,7 @@ const shuffle = (array) => {
       ></motion.div>
     ));
   };
-  
+
   const ShuffleGrid = () => {
     const timeoutRef = useRef(null);
     const [squares, setSquares] = useState(generateSquares());

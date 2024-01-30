@@ -59,15 +59,8 @@ const ContactSection = () => {
 
   return (
     <>
-      {showAlert && (
-        <motion.div
-          className="fixed top-0 left-0 right-0 p-4 bg-green-500 text-white text-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-        >
-          {alertMessage}
-        </motion.div>
-      )}
+      
+      
       <div className="bg-opacity-70 bg-black fixed inset-0 z-0"></div>
       <motion.section
         id="contact"
@@ -119,15 +112,14 @@ const ContactSection = () => {
           </motion.h2>
           <motion.div variants={itemVariants}>
             {showAlert && (
-              <motion.p
-                className={`text-${emailSubmitted ? "green" : "red"}-500 text-sm mt-2`}
+              <motion.div
+                className="fixed top-0 left-0 right-0 p-4 bg-green-500 text-white text-center"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
               >
                 {alertMessage}
-              </motion.p>
+              </motion.div>
             )}
-            {!emailSubmitted && (
               <form className="flex flex-col" onSubmit={sendEmail}>
                 <motion.div className="mb-6" variants={itemVariants}>
                   <label
@@ -184,7 +176,6 @@ const ContactSection = () => {
                   Send Message
                 </motion.button>
               </form>
-            )}
           </motion.div>
         </motion.div>
       </motion.section>

@@ -24,10 +24,12 @@ const HeroSection = () => {
   }, [controls]);
 
   const handleNameChange = () => {
-    controls.start({ opacity: 0, scale: 0.5 }).then(() => {
-      setCurrentName((prevName) => (prevName === 'Jameson' ? 'Junell' : 'Jameson'));
-      controls.start({ opacity: 1, scale: 1 });
-    });
+    useEffect( () => {
+      controls.start({ opacity: 0, scale: 0.5 }).then(() => {
+        setCurrentName((prevName) => (prevName === 'Jameson' ? 'Junell' : 'Jameson'));
+        controls.start({ opacity: 1, scale: 1 });
+      });
+    })
   };
 
   return (
